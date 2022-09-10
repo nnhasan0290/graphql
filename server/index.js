@@ -2,10 +2,14 @@ const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema/schema.js");
 const connectDB = require("./config/db.js");
+const cors = require("cors");
 
 
 const app = express();
+
 require("dotenv").config();
+
+app.use(cors());
 
 const port = process.env.PORT || 5000;
 
